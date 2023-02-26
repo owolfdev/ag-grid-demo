@@ -1,38 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## AG Grid Demo with Next.js
 
-## Getting Started
+This project is a demo of how to use AG Grid with a Next.js application. AG Grid is a powerful and flexible JavaScript data grid that provides advanced features like sorting, filtering, and pagination.
 
-First, run the development server:
+This project demonstrates how to fetch data from a remote API and display it in an AG Grid table. The table allows users to filter and paginate the data, making it easy to work with large data sets.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Getting Started
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run this project, you will need Node.js installed on your machine. Once you have Node.js installed, follow these steps:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Clone this repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run npm install to install the project dependencies.
+4. Run npm run dev to start the development server.
+5. Open http://localhost:3000 in your browser to view the demo.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### AG Grid Component
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The AG Grid component in this demo is a functional component written in TypeScript. It fetches data from a remote API using the useEffect hook and sets it as the rowData state variable.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The columnDefs variable defines the columns to display in the table. It specifies the field name and the filter type for each column.
 
-## Learn More
+The defaultColDef variable sets default properties for all columns. In this demo, it sets the flex, minWidth, and resizable properties.
 
-To learn more about Next.js, take a look at the following resources:
+The onGridReady function sets the gridApi and gridColumnApi state variables when the grid is ready. This allows us to interact with the grid through the API.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The onPaginationChanged function is called when the pagination changes. In this demo, it simply logs a message to the console.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The clearFilters function clears all filters when the "Clear Filters" button is clicked.
 
-## Deploy on Vercel
+The component returns an AgGridReact component with the necessary properties to display the grid. It also includes some styles to customize the appearance of the grid and the pagination controls.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Conclusion
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This demo shows how easy it is to use AG Grid with a Next.js application. AG Grid provides powerful data grid features that make it easy to work with large data sets.
