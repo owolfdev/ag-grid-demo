@@ -66,8 +66,13 @@ const Grid: React.FC = () => {
 
   return (
     <div className="ag-theme-alpine grid-container">
-      <div className="pagination">
-        <button onClick={clearFilters}>Clear Filters</button>
+      <div className="flex justify-between align-middle mb-4 text-lg text-[#4b5563] ">
+        <button
+          className="rounded bg-gray-200 px-3 py-1"
+          onClick={clearFilters}
+        >
+          Clear Filters
+        </button>
       </div>
       <AgGridReact
         className="ag-grid"
@@ -76,12 +81,12 @@ const Grid: React.FC = () => {
         defaultColDef={defaultColDef}
         onGridReady={onGridReady}
         pagination={true}
-        paginationPageSize={10}
+        paginationPageSize={50}
         onPaginationChanged={onPaginationChanged}
       ></AgGridReact>
       <style jsx global>{`
         .grid-container {
-          height: 600px;
+          height: 800px;
           width: 100%;
         }
         .ag-grid .ag-cell {
@@ -97,33 +102,6 @@ const Grid: React.FC = () => {
           color: #374151;
           background-color: #f9fafb;
           border-color: #e5e7eb;
-        }
-        .pagination {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin-bottom: 1rem;
-          font-size: 1.2rem;
-          color: #4b5563;
-        }
-
-        .pagination button {
-          background-color: #e5e7eb;
-          color: #4b5563;
-          border: none;
-          border-radius: 0.25rem;
-          padding: 0.5rem 1rem;
-          cursor: pointer;
-          margin-right: 0.5rem;
-        }
-
-        .pagination button:disabled {
-          background-color: #d1d5db;
-          cursor: not-allowed;
-        }
-
-        .pagination div {
-          margin: 0 1rem;
         }
       `}</style>
     </div>
